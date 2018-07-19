@@ -5,7 +5,8 @@ package com.publicpay.edu.alipay.service;
  * @version V1.0
  * @Package com.publicpay.edu.alipay.service
  * @Description: TODO
- * @date 2018/7/18 下午2:07
+ * @date 2018/7/19 上午9:39
  */
-public class AlipayOpenAuthTokenAppRequest {
+public interface AlipayGetAppAuthTokenService {
+    String getAppAuthToken();
 }

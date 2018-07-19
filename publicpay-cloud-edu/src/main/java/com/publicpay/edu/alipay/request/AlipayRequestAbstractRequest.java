@@ -1,4 +1,4 @@
-package com.publicpay.edu.alipay.service;
+package com.publicpay.edu.alipay.request;
 
 import com.alipay.api.AlipayApiException;
 import com.alipay.api.AlipayClient;
@@ -13,7 +13,7 @@ import com.publicpay.edu.alipay.utils.AlipayClientUtil;
  * @Description: TODO
  * @date 2018/7/18 下午5:51
  */
-public abstract class AlipayRequestAbstractService {
+public abstract class AlipayRequestAbstractRequest {
 
     public abstract void service() throws AlipayApiException;
 

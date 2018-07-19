@@ -2,7 +2,7 @@ package com.publicpay.edu.service;
 
 import com.alipay.api.AlipayApiException;
 import com.publicpay.edu.BaseTest;
-import com.publicpay.edu.alipay.service.impl.AlipayOpenAuthTokenAppRequestImpl;
+import com.publicpay.edu.alipay.request.impl.AlipayOpenAuthTokenAppRequestImpl;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 

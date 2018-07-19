@@ -1,9 +1,9 @@
-package com.publicpay.edu.alipay.service.impl;
+package com.publicpay.edu.alipay.request.impl;
 
 import com.alipay.api.AlipayApiException;
 import com.alipay.api.request.AlipayOpenAuthTokenAppRequest;
 import com.alipay.api.response.AlipayOpenAuthTokenAppResponse;
-import com.publicpay.edu.alipay.service.AlipayRequestAbstractService;
+import com.publicpay.edu.alipay.request.AlipayRequestAbstractRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -12,11 +12,11 @@ import org.springframework.stereotype.Service;
  * @author dyb
  * @version V1.0
  * @Package com.publicpay.edu.alipay.service
- * @Description: TODO
+ * @Description: 通过app_auth_code 换取app_auth_token
  * @date 2018/7/18 下午2:07
  */
 @Service
-public class AlipayOpenAuthTokenAppRequestImpl extends AlipayRequestAbstractService {
+public class AlipayOpenAuthTokenAppRequestImpl extends AlipayRequestAbstractRequest {
     private static final Logger logger = LoggerFactory.getLogger(AlipayOpenAuthTokenAppRequestImpl.class);
 
     @Override
