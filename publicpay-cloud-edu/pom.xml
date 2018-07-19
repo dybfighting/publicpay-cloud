@@ -66,6 +66,8 @@
         <!--<artifactId>publicpay-cloud-base</artifactId>-->
         <!--<version>1.0.0</version>-->
         <!--</dependency>-->
+
+        <!--阿里sdk-->
         <dependency>
             <groupId>com.alipay.sdk</groupId>
             <artifactId>alipay-sdk-java</artifactId>
@@ -77,6 +79,12 @@
             <version>1.1.1</version>
         </dependency>
 
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.1.46</version>
+        </dependency>
 
         <dependency>
             <groupId>org.tinygroup</groupId>
