@@ -20,9 +20,9 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping
-public class AuthCallbackController {
+public class AlipayAuthCallbackController {
 
-    private static final Logger logger = LoggerFactory.getLogger(AuthCallbackController.class);
+    private static final Logger logger = LoggerFactory.getLogger(AlipayAuthCallbackController.class);
 
     @Resource
     private AlipayRequestAbstractRequest alipayOpenAuthTokenAppRequestImpl;
@@ -33,7 +33,7 @@ public class AuthCallbackController {
      */
     @RequestMapping(value = "/authCallback")
     public String authCallback(@RequestParam(value = "app_id")String appId ,@RequestParam(value = "app_auth_code")String appAuthCode){
-//    TODO 返回开发这appId 、商户授权code（有效期24小时）
+//    TODO 返回开发者appId 、商户授权code（有效期24小时）
         logger.info("appId:{},appAuthCode:{}",appId,appAuthCode);
         try {
             alipayOpenAuthTokenAppRequestImpl.service();
