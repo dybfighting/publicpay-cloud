@@ -38,14 +38,14 @@ public abstract class AlipayRequestAbstractRequest {
         return alipayClient.execute(request);
     }
 
-    /**
-     * 通过反射拼装参数
-     * @param request
-     * @return
-     * @throws NoSuchMethodException
-     * @throws InvocationTargetException
-     * @throws IllegalAccessException
-     */
+ /**
+ 　　* @Description: 通过反射拼装参数
+ 　　* @param
+ 　　* @return 
+ 　　* @throws 
+ 　　* @author dyb
+ 　　* @date 2018/7/20 上午12:06 
+ 　　*/
     public static String getBitContent(Object request) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         JSONObject bizContent = new JSONObject();
         Field[] fields = request.getClass().getDeclaredFields();
