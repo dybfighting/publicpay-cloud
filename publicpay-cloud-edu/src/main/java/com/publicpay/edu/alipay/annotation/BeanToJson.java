@@ -6,7 +6,7 @@ import java.lang.annotation.*;
  * @author dyb
  * @version V1.0
  * @Package com.publicpay.edu.alipay.annotation
- * @Description: TODO
+ * @Description: 用来转json
  * @date 2018/7/19 下午9:03
  */
 @Target(ElementType.FIELD)

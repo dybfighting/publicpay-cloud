@@ -1,6 +1,8 @@
 package com.publicpay.edu.alipay.bean;
 
 import com.publicpay.edu.alipay.annotation.BeanToJson;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+
 import static com.publicpay.edu.alipay.constant.Constant4AlipayEdu.*;
 /**
  * @author dyb
@@ -55,6 +57,173 @@ public class AlipayEcoEduKtSchoolinfoModifyRequestBizContentBean {
     @BeanToJson(WHITE_CHANNEL_CODE)
     private String whiteChannelCode;//可选	32	与浙江网商交易见证平台有交互的ISV,由网商分配给ISV的渠道参数
 
+    public String getSchoolIcon() {
+        return schoolIcon;
+    }
+
+    public void setSchoolIcon(String schoolIcon) {
+        this.schoolIcon = schoolIcon;
+    }
+
+    public String getSchoolIconType() {
+        return schoolIconType;
+    }
+
+    public void setSchoolIconType(String schoolIconType) {
+        this.schoolIconType = schoolIconType;
+    }
+
+    public String getSchoolStdcode() {
+        return schoolStdcode;
+    }
+
+    public void setSchoolStdcode(String schoolStdcode) {
+        this.schoolStdcode = schoolStdcode;
+    }
+
+    public String getSchoolType() {
+        return schoolType;
+    }
+
+    public void setSchoolType(String schoolType) {
+        this.schoolType = schoolType;
+    }
+
+    public String getProvinceCode() {
+        return provinceCode;
+    }
+
+    public void setProvinceCode(String provinceCode) {
+        this.provinceCode = provinceCode;
+    }
+
+    public String getProvinceName() {
+        return provinceName;
+    }
+
+    public void setProvinceName(String provinceName) {
+        this.provinceName = provinceName;
+    }
+
+    public String getCityCode() {
+        return cityCode;
+    }
+
+    public void setCityCode(String cityCode) {
+        this.cityCode = cityCode;
+    }
+
+    public String getCityName() {
+        return cityName;
+    }
+
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
+
+    public String getDistrictCode() {
+        return districtCode;
+    }
+
+    public void setDistrictCode(String districtCode) {
+        this.districtCode = districtCode;
+    }
+
+    public String getDistrictName() {
+        return districtName;
+    }
+
+    public void setDistrictName(String districtName) {
+        this.districtName = districtName;
+    }
+
+    public String getIsvNo() {
+        return isvNo;
+    }
+
+    public void setIsvNo(String isvNo) {
+        this.isvNo = isvNo;
+    }
+
+    public String getIsvName() {
+        return isvName;
+    }
+
+    public void setIsvName(String isvName) {
+        this.isvName = isvName;
+    }
+
+    public String getIsvNotifyUrl() {
+        return isvNotifyUrl;
+    }
+
+    public void setIsvNotifyUrl(String isvNotifyUrl) {
+        this.isvNotifyUrl = isvNotifyUrl;
+    }
+
+    public String getIsvPid() {
+        return isvPid;
+    }
+
+    public void setIsvPid(String isvPid) {
+        this.isvPid = isvPid;
+    }
+
+    public String getIsvPhone() {
+        return isvPhone;
+    }
+
+    public void setIsvPhone(String isvPhone) {
+        this.isvPhone = isvPhone;
+    }
+
+    public String getSchoolPid() {
+        return schoolPid;
+    }
+
+    public void setSchoolPid(String schoolPid) {
+        this.schoolPid = schoolPid;
+    }
+
+    public String getBankcardNo() {
+        return bankcardNo;
+    }
+
+    public void setBankcardNo(String bankcardNo) {
+        this.bankcardNo = bankcardNo;
+    }
+
+    public String getBankUid() {
+        return bankUid;
+    }
+
+    public void setBankUid(String bankUid) {
+        this.bankUid = bankUid;
+    }
+
+    public String getBankNotifyUrl() {
+        return bankNotifyUrl;
+    }
+
+    public void setBankNotifyUrl(String bankNotifyUrl) {
+        this.bankNotifyUrl = bankNotifyUrl;
+    }
+
+    public String getBankPartnerId() {
+        return bankPartnerId;
+    }
+
+    public void setBankPartnerId(String bankPartnerId) {
+        this.bankPartnerId = bankPartnerId;
+    }
+
+    public String getWhiteChannelCode() {
+        return whiteChannelCode;
+    }
+
+    public void setWhiteChannelCode(String whiteChannelCode) {
+        this.whiteChannelCode = whiteChannelCode;
+    }
 
     public String getSchoolName() {
         return schoolName;
@@ -62,5 +231,10 @@ public class AlipayEcoEduKtSchoolinfoModifyRequestBizContentBean {
 
     public void setSchoolName(String schoolName) {
         this.schoolName = schoolName;
+    }
+
+    @Override
+    public String toString() {
+        return  ToStringBuilder.reflectionToString(this);
     }
 }
