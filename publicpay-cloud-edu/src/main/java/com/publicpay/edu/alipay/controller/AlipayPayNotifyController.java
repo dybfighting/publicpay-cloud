@@ -2,6 +2,7 @@ package com.publicpay.edu.alipay.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
  * @author dyb
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class AlipayPayNotifyController {
 
-    @RequestMapping
+    @RequestMapping(value = "payNotify",method = RequestMethod.POST)
     public String payNotify(){
 
         return null;

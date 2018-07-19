@@ -34,14 +34,14 @@ public class AlipayEcoEduKtBillingModifyRequestImpl extends AlipayRequestAbstrac
                         "\"buyer_logon_id\":\"159****5620\"," +
                         "\"gmt_refund\":\"2015-11-27 15:45:57\"," +
                         "\"buyer_user_id\":\"2088101117955611\"," +
-                        "\"refund_detail_item_list\":\"{\\r\" +
-                "\\t\\\"fund_channel\\\":\\\"ALIPAYACCOUNT\\\",\\r\" +
-                "\\t\\\"amount\\\":12.00,\\r\" +
-                "\\t\\\"real_amount\\\":12.00\\r\" +
-                "\\t\\r\" +
-                "}\"" +
+//                        "\"refund_detail_item_list\":\"{\\r\" +
+//                "\\t\\\"fund_channel\\\":\\\"ALIPAYACCOUNT\\\",\\r\" +
+//                "\\t\\\"amount\\\":12.00,\\r\" +
+//                "\\t\\\"real_amount\\\":12.00\\r\" +
+//                "\\t\\r\" +
+//                "}\"" +
                         "  }");
-        request.putOtherTextParam("app_auth_token", "201611BB888ae9acd6e44fec9940d09201abfE16");
+        request.putOtherTextParam("app_auth_token", "201807BB174206f064a549a0b48496d880310X66");
 
         AlipayEcoEduKtBillingModifyResponse response = execute(request);
 

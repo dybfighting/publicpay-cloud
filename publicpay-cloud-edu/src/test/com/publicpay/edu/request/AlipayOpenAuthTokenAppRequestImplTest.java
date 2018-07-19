@@ -1,4 +1,4 @@
-package com.publicpay.edu.service;
+package com.publicpay.edu.request;
 
 import com.alipay.api.AlipayApiException;
 import com.publicpay.edu.BaseTest;

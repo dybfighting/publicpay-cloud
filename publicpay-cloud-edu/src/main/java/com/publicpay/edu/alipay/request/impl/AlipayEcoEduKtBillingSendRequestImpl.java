@@ -54,7 +54,6 @@ public class AlipayEcoEduKtBillingSendRequestImpl extends AlipayRequestAbstractR
         request.putOtherTextParam("app_auth_token", "201611BB888ae9acd6e44fec9940d09201abfE16");
 
         AlipayEcoEduKtBillingSendResponse response = execute(request);
-
         if(response.isSuccess()){
             System.out.println("调用成功");
         } else {
