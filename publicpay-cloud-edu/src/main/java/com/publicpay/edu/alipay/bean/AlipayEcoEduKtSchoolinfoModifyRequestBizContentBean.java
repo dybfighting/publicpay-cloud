@@ -8,7 +8,7 @@ import static com.publicpay.edu.alipay.constant.Constant4AlipayEdu.*;
  * @author dyb
  * @version V1.0
  * @Package com.publicpay.edu.alipay.bean
- * @Description: TODO
+ * @Description: 学校信息录入接口bean
  * @date 2018/7/19 下午9:01
  */
 public class AlipayEcoEduKtSchoolinfoModifyRequestBizContentBean {

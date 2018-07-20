@@ -111,6 +111,9 @@ public class Constant4AlipayEdu {
     public static final String ORDER_STATUS = "order_status";//NOT_PAY 待缴费 ,PAYING 支付中 ,PAY_SUCCESS 支付成功，处理中BILLING_SUCCESS 缴费成功TIMEOUT_CLOSED 逾期关闭账单ISV_CLOSED 账单关闭
 
 
-
+    /**
+     * 支付宝支付结果通知接口参数
+     */
+    public static final String NOTIFY_TIME = "notify_time";//
 
 }

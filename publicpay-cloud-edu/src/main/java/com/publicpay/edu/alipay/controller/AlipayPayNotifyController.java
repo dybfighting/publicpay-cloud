@@ -1,8 +1,12 @@
 package com.publicpay.edu.alipay.controller;
 
+import com.publicpay.edu.alipay.bean.AlipayPayNotifyUrlRequestBean;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import javax.validation.Valid;
 
 /**
  * @author dyb
@@ -18,8 +22,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class AlipayPayNotifyController {
 
     @RequestMapping(value = "payNotify",method = RequestMethod.POST)
-    public String payNotify(){
+    public String payNotify(@Valid AlipayPayNotifyUrlRequestBean alipayPayNotifyUrlRequestBean, BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
 
+        }
         return null;
     }
 }

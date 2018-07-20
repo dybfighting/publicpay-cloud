@@ -7,9 +7,12 @@ import com.alipay.api.AlipayRequest;
 import com.alipay.api.AlipayResponse;
 import com.publicpay.edu.alipay.annotation.BeanToJson;
 import com.publicpay.edu.alipay.bean.AlipayEcoEduKtBillingSendRequestBizContentBean;
+import com.publicpay.edu.alipay.constant.Constant4AlipayEdu;
 import com.publicpay.edu.alipay.utils.AlipayClientUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.json.simple.JSONArray;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -22,14 +25,17 @@ import java.util.stream.Collectors;
  * @author dyb
  * @version V1.0
  * @Package com.publicpay.edu.alipay.service
- * @Description: TODO
+ * @Description: 支付宝教育接口请求抽象类
  * @date 2018/7/18 下午5:51
  */
 public abstract class AlipayRequestAbstractRequest {
 
+    private static final Logger logger = LoggerFactory.getLogger(AlipayRequestAbstractRequest.class);
+
     public static final List<String> list = new ArrayList<>();
     static {
-        list.add("users");
+        list.add(Constant4AlipayEdu.USERS);
+        list.add("");
     }
     public abstract void service() throws AlipayApiException;
 
@@ -86,12 +92,8 @@ public abstract class AlipayRequestAbstractRequest {
                             try {
                                 Method method2 = e.getClass().getMethod("get" + name2.substring(0, 1).toUpperCase() + name2.substring(1, name2.length()), null);
                                 value2 = (String) method2.invoke(e);
-                            } catch (NoSuchMethodException e1) {
-                                e1.printStackTrace();
-                            } catch (IllegalAccessException e1) {
-                                e1.printStackTrace();
-                            } catch (InvocationTargetException e1) {
-                                e1.printStackTrace();
+                            } catch (Exception e1) {
+                                logger.error("",e1);
                             }
                             if (StringUtils.isNotBlank(value2)){
                                 bizContent2.put(key2,value2);
