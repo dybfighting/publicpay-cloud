@@ -117,4 +117,9 @@ public class Constant4AlipayEdu {
      */
     public static final String NOTIFY_TIME = "notify_time";//
 
+    /**
+     * 学生信息查询接口参数
+     */
+    public static final String STUDENT_NO = "student_no";
+
 }

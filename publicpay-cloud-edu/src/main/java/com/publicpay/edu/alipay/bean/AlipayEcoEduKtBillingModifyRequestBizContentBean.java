@@ -14,27 +14,27 @@ import static com.publicpay.edu.alipay.constant.Constant4AlipayEdu.*;
  */
 public class AlipayEcoEduKtBillingModifyRequestBizContentBean extends AlipayBizContentBean{
     @BeanToJson(TRADE_NO)
-    private String tradeNo;
+    private String tradeNo;//特殊可选	64	支付宝返回的交易号
     @BeanToJson(OUT_TRADE_NO)
-    private String outTradeNo;
+    private String outTradeNo;//特殊可选	64	isv系统的订单号
     @BeanToJson(STATUS)
-    private String status;
+    private String status;//必选	1	状态：1:缴费成功，2:关闭账单，3、退费 如果为退款状态，需要填写以下字段,字段都是支付宝退款返回的必填参数
     @BeanToJson(FUND_CHANGE)
-    private String fundChange;
+    private String fundChange;//可选	1	本次退款是否发生了资金变化
     @BeanToJson(REFUND_AMOUNT)
-    private String refundAmount;
+    private Double refundAmount;//可选	9	需要退款的金额，该金额不能大于订单金额,单位为元，支持两位小数
     @BeanToJson(REFUND_REASON)
-    private String refundReason;
+    private String refundReason;//可选	256	退款原因，商家根据客户实际退款原因填写
     @BeanToJson(OUT_REQUEST_NO)
-    private String outRequestNo;
+    private String outRequestNo;//可选	65	标识一次退款请求，同一笔交易多次退款需要保证唯一，如需部分退款，则此参数必传
     @BeanToJson(BUYER_LOGON_ID)
-    private String buyerLogonId;
+    private String buyerLogonId;//可选	100	退款时，支付宝返回的用户的登录id
     @BeanToJson(GMT_REFUND)
-    private String gmtRefund;
+    private String gmtRefund;//可选	64	支付宝返回的退款时间，而不是商户退款申请的时间
     @BeanToJson(BUYER_USER_ID)
-    private String buyerUserId;
+    private String buyerUserId;//可选	28	支付宝返回的买家支付宝用户id
     @BeanToJson(REFUND_DETAIL_ITEM_LIST)
-    private String refundDetailItemList;
+    private String refundDetailItemList;//可选	2000	支付宝返回的退款资金渠道，json格式字符串
 
     public String getTradeNo() {
         return tradeNo;
@@ -68,11 +68,11 @@ public class AlipayEcoEduKtBillingModifyRequestBizContentBean extends AlipayBizC
         this.fundChange = fundChange;
     }
 
-    public String getRefundAmount() {
+    public Double getRefundAmount() {
         return refundAmount;
     }
 
-    public void setRefundAmount(String refundAmount) {
+    public void setRefundAmount(Double refundAmount) {
         this.refundAmount = refundAmount;
     }
 

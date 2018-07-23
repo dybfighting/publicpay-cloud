@@ -4,6 +4,7 @@ import com.alipay.api.AlipayApiException;
 import com.alipay.api.AlipayClient;
 import com.alipay.api.AlipayRequest;
 import com.alipay.api.AlipayResponse;
+import com.publicpay.edu.alipay.bean.AlipayBizContentBean;
 import com.publicpay.edu.alipay.utils.AlipayClientUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +23,7 @@ public abstract class AlipayAbstractRequest {
     private static final Logger logger = LoggerFactory.getLogger(AlipayAbstractRequest.class);
 
 
-    public abstract <T extends AlipayResponse> T service(Object obj) throws AlipayApiException, NoSuchMethodException, IllegalAccessException, InvocationTargetException;
+    public abstract <T extends AlipayResponse> T service(AlipayBizContentBean bizContentBean) throws AlipayApiException, NoSuchMethodException, IllegalAccessException, InvocationTargetException;
 
     public <T extends AlipayResponse> T execute(AlipayRequest<T> request) throws AlipayApiException {
         AlipayClient alipayClient = AlipayClientUtil.getInstance();

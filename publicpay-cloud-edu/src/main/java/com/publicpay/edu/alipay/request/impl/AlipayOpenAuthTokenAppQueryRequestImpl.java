@@ -3,10 +3,13 @@ package com.publicpay.edu.alipay.request.impl;
 import com.alipay.api.AlipayApiException;
 import com.alipay.api.request.AlipayOpenAuthTokenAppQueryRequest;
 import com.alipay.api.response.AlipayOpenAuthTokenAppQueryResponse;
+import com.publicpay.edu.alipay.bean.AlipayBizContentBean;
 import com.publicpay.edu.alipay.request.AlipayAbstractRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * @author dyb
@@ -20,11 +23,9 @@ public class AlipayOpenAuthTokenAppQueryRequestImpl extends AlipayAbstractReques
 
     private static final Logger logger = LoggerFactory.getLogger(AlipayOpenAuthTokenAppQueryRequestImpl.class);
     @Override
-    public AlipayOpenAuthTokenAppQueryResponse service(Object obj) throws AlipayApiException {
+    public AlipayOpenAuthTokenAppQueryResponse service(AlipayBizContentBean bizContentBean) throws AlipayApiException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
         AlipayOpenAuthTokenAppQueryRequest request = new AlipayOpenAuthTokenAppQueryRequest();
-        request.setBizContent("{" +
-                "\"app_auth_token\":\"201509BBeff9351ad1874306903e96b91d248A36\"" +
-                "  }");
+        request.setBizContent(bizContentBean.getBitContent());
         AlipayOpenAuthTokenAppQueryResponse response = execute(request);
         if(response.isSuccess()){
             System.out.println("调用成功");

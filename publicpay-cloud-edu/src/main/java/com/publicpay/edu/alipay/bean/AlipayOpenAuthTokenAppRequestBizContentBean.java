@@ -16,11 +16,11 @@ import static com.publicpay.edu.alipay.constant.Constant4AlipayEdu.REFRESH_TOKEN
  */
 public class AlipayOpenAuthTokenAppRequestBizContentBean extends AlipayBizContentBean{
     @BeanToJson(GRANT_TYPE)
-    private String grantType;
+    private String grantType;//必选	20	authorization_code表示换取app_auth_token。refresh_token表示刷新app_auth_token。
     @BeanToJson(CODE)
-    private String code;
+    private String code;//可选	40	授权码，如果grant_type的值为authorization_code。该值必须填写
     @BeanToJson(REFRESH_TOKEN)
-    private String refreshToken;
+    private String refreshToken;//可选	40	刷新令牌，如果grant_type值为refresh_token。该值不能为空。该值来源于此接口的返回值app_refresh_token（至少需要通过grant_type=authorization_code调用此接口一次才能获取）
 
     public String getGrantType() {
         return grantType;

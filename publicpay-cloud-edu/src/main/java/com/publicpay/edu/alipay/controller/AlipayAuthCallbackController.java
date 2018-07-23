@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import java.lang.reflect.InvocationTargetException;
 
+import static com.publicpay.edu.alipay.constant.Constant4AlipayEdu.AUTHORIZATION_CODE;
+
 /**
  * @author dyb
  * @version V1.0
@@ -39,7 +41,7 @@ public class AlipayAuthCallbackController {
         logger.info("appId:{},appAuthCode:{}",appId,appAuthCode);
         AlipayOpenAuthTokenAppRequestBizContentBean bizContentBean = new AlipayOpenAuthTokenAppRequestBizContentBean();
         bizContentBean.setCode(appAuthCode);
-        bizContentBean.setGrantType("authorization_code");
+        bizContentBean.setGrantType(AUTHORIZATION_CODE);
         try {
             alipayOpenAuthTokenAppRequestImpl.service(bizContentBean);
         } catch (AlipayApiException e) {

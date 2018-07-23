@@ -3,10 +3,15 @@ package com.publicpay.edu.alipay.request.impl;
 import com.alipay.api.AlipayApiException;
 import com.alipay.api.request.AlipayEcoEduKtBillingQueryRequest;
 import com.alipay.api.response.AlipayEcoEduKtBillingQueryResponse;
+import com.publicpay.edu.alipay.bean.AlipayBizContentBean;
 import com.publicpay.edu.alipay.request.AlipayAbstractRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+
+import java.lang.reflect.InvocationTargetException;
+
+import static com.publicpay.edu.alipay.constant.Constant4AlipayEdu.APP_AUTH_TOKEN;
 
 /**
  * @author dyb
@@ -21,15 +26,10 @@ public class AlipayEcoEduKtBillingQueryRequestImpl extends AlipayAbstractRequest
     private static final Logger logger = LoggerFactory.getLogger(AlipayEcoEduKtBillingQueryRequestImpl.class);
 
     @Override
-    public AlipayEcoEduKtBillingQueryResponse service(Object obj) throws AlipayApiException {
+    public AlipayEcoEduKtBillingQueryResponse service(AlipayBizContentBean bizContentBean) throws AlipayApiException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
         AlipayEcoEduKtBillingQueryRequest request = new AlipayEcoEduKtBillingQueryRequest();
-        request.setBizContent("{" +
-                "\"isv_pid\":\"2088121212121212\"," +
-                "\"school_pid\":\"2088101117955611\"," +
-                "\"out_trade_no\":\"58de07de7bb90a437553e464\"" +
-                "  }");
-        request.putOtherTextParam("app_auth_token", "201611BB888ae9acd6e44fec9940d09201abfE16");
-
+        request.setBizContent(bizContentBean.getBitContent());
+        request.putOtherTextParam(APP_AUTH_TOKEN, bizContentBean.getAppAuthToken());
         AlipayEcoEduKtBillingQueryResponse response = execute(request);
         if(response.isSuccess()){
             System.out.println("调用成功");

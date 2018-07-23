@@ -3,7 +3,7 @@ package com.publicpay.edu.alipay.request.impl;
 import com.alipay.api.AlipayApiException;
 import com.alipay.api.request.AlipayOpenAuthTokenAppRequest;
 import com.alipay.api.response.AlipayOpenAuthTokenAppResponse;
-import com.publicpay.edu.alipay.bean.AlipayOpenAuthTokenAppRequestBizContentBean;
+import com.publicpay.edu.alipay.bean.AlipayBizContentBean;
 import com.publicpay.edu.alipay.request.AlipayAbstractRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,10 +23,9 @@ public class AlipayOpenAuthTokenAppRequestImpl extends AlipayAbstractRequest {
     private static final Logger logger = LoggerFactory.getLogger(AlipayOpenAuthTokenAppRequestImpl.class);
 
     @Override
-    public AlipayOpenAuthTokenAppResponse service(Object obj) throws AlipayApiException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
-        AlipayOpenAuthTokenAppRequestBizContentBean alipayOpenAuthTokenAppRequestBizContentBean = (AlipayOpenAuthTokenAppRequestBizContentBean) obj;
+    public AlipayOpenAuthTokenAppResponse service(AlipayBizContentBean bizContentBean) throws AlipayApiException, NoSuchMethodException, IllegalAccessException, InvocationTargetException {
         AlipayOpenAuthTokenAppRequest request = new AlipayOpenAuthTokenAppRequest();
-        request.setBizContent(alipayOpenAuthTokenAppRequestBizContentBean.getBitContent());
+        request.setBizContent(bizContentBean.getBitContent());
         AlipayOpenAuthTokenAppResponse response = execute(request);
 //        String userId = response.getUserId();//商户pid
 //        String appAuthToken = response.getAppAuthToken();

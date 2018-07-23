@@ -24,14 +24,14 @@ import static com.publicpay.edu.alipay.constant.Constant4AlipayEdu.APP_AUTH_TOKE
  * @date 2018/7/23 下午3:09
  */
 public class AlipayBizContentBean {
-    private static final Logger logger = LoggerFactory.getLogger(AlipayBizContentBean.class);
+    private static final  Logger logger = LoggerFactory.getLogger(AlipayBizContentBean.class);
 
-    public static final List<String> list = new ArrayList<>();
+    public static final List<String> filterList = new ArrayList<>();
     static {
-        list.add(Constant4AlipayEdu.USERS);
-        list.add(Constant4AlipayEdu.CHARGEITEM);
+        filterList.add(Constant4AlipayEdu.USERS);
+        filterList.add(Constant4AlipayEdu.CHARGEITEM);
     }
-
+    @BeanToJson(APP_AUTH_TOKEN)
     private String appAuthToken;
 
 
@@ -58,14 +58,15 @@ public class AlipayBizContentBean {
             Field field = fields[i];
             String name = field.getName();
             String type = field.getGenericType().toString();
-            logger.info("类型:{}",type);
-            if (name.equals(APP_AUTH_TOKEN)){
-                logger.info("APP_AUTH_TOKEN:{}",APP_AUTH_TOKEN);
+            if (name.equals("logger")||name.equals("filterList")){
                 continue;
             }
+            System.out.println("****field:"+name);
+            logger.info(field.toString());
             String key = field.getAnnotation(BeanToJson.class).value();
+            logger.info("name:{},key:{}",name,key);
             Method method = this.getClass().getMethod("get" + name.substring(0, 1).toUpperCase() + name.substring(1, name.length()), null);
-            if(list.contains(name)){
+            if(filterList.contains(name)){
                 List<Object> value = (List<Object>) method.invoke(this);
                 List<JSONObject> users = getJsonObjects(value);
                 bizContent.put(key, users);
