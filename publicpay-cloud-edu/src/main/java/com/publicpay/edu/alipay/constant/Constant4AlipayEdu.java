@@ -80,6 +80,7 @@ public class Constant4AlipayEdu {
     public static final String CHARGE_BILL_TITLE = "charge_bill_title";//缴费账单名称
     public static final String CHARGE_TYPE = "charge_type";//缴费项模式：空或"N"，表示缴费项不可选，"M"表示缴费项为可选 ，支持单选和多选。
     public static final String CHARGE_ITEM = "charge_item";//缴费详情：输入json格式字符串。Json定义：key填写缴费项名称，value填写缴费项金额，金额保留2位小数
+    public static final String CHARGEITEM = "chargeItem";
     public static final String ITEM_NAME = "item_name";//缴费项名称
     public static final String ITEM_PRICE = "item_price";//缴费项金额
     public static final String ITEM_SERIAL_NUMBER = "item_serial_number";//缴费项序号，如果缴费项是多选模式，此项为必填，建议从1开始的连续数字，用户支付成功后，通过passback_params参数带回已选择的缴费项。例如:orderNo=uoo234234&isvOrderNo=24werwe&items=1-2|2-1|3-51-2|2-1|3-5 表示：缴费项序列号-缴费项数|缴费项序列号-缴费项数

@@ -11,7 +11,7 @@ import static com.publicpay.edu.alipay.constant.Constant4AlipayEdu.*;
  * @Description: 学校信息录入接口bean
  * @date 2018/7/19 下午9:01
  */
-public class AlipayEcoEduKtSchoolinfoModifyRequestBizContentBean {
+public class AlipayEcoEduKtSchoolinfoModifyRequestBizContentBean extends AlipayBizContentBean{
     @BeanToJson(SCHOOL_NAME)
     private String schoolName;//必选	256	学校名称
     @BeanToJson(SCHOOL_ICON)

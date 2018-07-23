@@ -3,7 +3,7 @@ package com.publicpay.edu.alipay.request.impl;
 import com.alipay.api.AlipayApiException;
 import com.alipay.api.request.AlipayEcoEduKtBillingModifyRequest;
 import com.alipay.api.response.AlipayEcoEduKtBillingModifyResponse;
-import com.publicpay.edu.alipay.request.AlipayRequestAbstractRequest;
+import com.publicpay.edu.alipay.request.AlipayAbstractRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -16,12 +16,12 @@ import org.springframework.stereotype.Service;
  * @date 2018/7/19 上午9:50
  */
 @Service
-public class AlipayEcoEduKtBillingModifyRequestImpl extends AlipayRequestAbstractRequest {
+public class AlipayEcoEduKtBillingModifyRequestImpl extends AlipayAbstractRequest {
 
     private static final Logger logger = LoggerFactory.getLogger(AlipayEcoEduKtBillingModifyRequestImpl.class);
 
     @Override
-    public void service() throws AlipayApiException {
+    public AlipayEcoEduKtBillingModifyResponse service(Object obj) throws AlipayApiException {
         AlipayEcoEduKtBillingModifyRequest request = new AlipayEcoEduKtBillingModifyRequest();
         request.setBizContent("{" +
                         "\"trade_no\":\"2014112611001004680073956707\"," +
@@ -50,5 +50,6 @@ public class AlipayEcoEduKtBillingModifyRequestImpl extends AlipayRequestAbstrac
         } else {
             System.out.println("调用失败");
         }
+        return response;
     }
 }

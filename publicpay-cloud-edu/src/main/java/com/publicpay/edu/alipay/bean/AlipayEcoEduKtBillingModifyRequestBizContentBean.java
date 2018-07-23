@@ -12,7 +12,7 @@ import static com.publicpay.edu.alipay.constant.Constant4AlipayEdu.*;
  * @Description: 教育缴费账单状态同步接口
  * @date 2018/7/20 下午3:25
  */
-public class AlipayEcoEduKtBillingModifyRequestBizContentBean {
+public class AlipayEcoEduKtBillingModifyRequestBizContentBean extends AlipayBizContentBean{
     @BeanToJson(TRADE_NO)
     private String tradeNo;
     @BeanToJson(OUT_TRADE_NO)

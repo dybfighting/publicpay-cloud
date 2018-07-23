@@ -21,7 +21,7 @@ import javax.validation.Valid;
 @Controller
 public class AlipayPayNotifyController {
 
-    @RequestMapping(value = "payNotify",method = RequestMethod.POST)
+    @RequestMapping(value = "/payNotify",method = RequestMethod.POST)
     public String payNotify(@Valid AlipayPayNotifyUrlRequestBean alipayPayNotifyUrlRequestBean, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
 

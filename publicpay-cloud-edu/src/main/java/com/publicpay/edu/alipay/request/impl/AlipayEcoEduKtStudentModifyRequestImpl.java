@@ -3,7 +3,7 @@ package com.publicpay.edu.alipay.request.impl;
 import com.alipay.api.AlipayApiException;
 import com.alipay.api.request.AlipayEcoEduKtStudentModifyRequest;
 import com.alipay.api.response.AlipayEcoEduKtStudentModifyResponse;
-import com.publicpay.edu.alipay.request.AlipayRequestAbstractRequest;
+import com.publicpay.edu.alipay.request.AlipayAbstractRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -16,11 +16,11 @@ import org.springframework.stereotype.Service;
  * @date 2018/7/19 上午10:15
  */
 @Service
-public class AlipayEcoEduKtStudentModifyRequestImpl extends AlipayRequestAbstractRequest{
+public class AlipayEcoEduKtStudentModifyRequestImpl extends AlipayAbstractRequest {
 
     private static final Logger logger = LoggerFactory.getLogger(AlipayEcoEduKtStudentModifyRequestImpl.class);
     @Override
-    public void service() throws AlipayApiException {
+    public AlipayEcoEduKtStudentModifyResponse service(Object obj) throws AlipayApiException {
         AlipayEcoEduKtStudentModifyRequest request = new AlipayEcoEduKtStudentModifyRequest();
         request.setBizContent("{" +
                 "\"isv_pid\":\"2088121212121212\"," +
@@ -45,6 +45,6 @@ public class AlipayEcoEduKtStudentModifyRequestImpl extends AlipayRequestAbstrac
         } else {
             System.out.println("调用失败");
         }
-
+        return response;
     }
 }

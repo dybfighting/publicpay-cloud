@@ -1,7 +1,8 @@
 package com.publicpay.edu.alipay.controller;
 
 import com.alipay.api.AlipayApiException;
-import com.publicpay.edu.alipay.request.AlipayRequestAbstractRequest;
+import com.publicpay.edu.alipay.bean.AlipayOpenAuthTokenAppRequestBizContentBean;
+import com.publicpay.edu.alipay.request.AlipayAbstractRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.lang.reflect.InvocationTargetException;
 
 /**
  * @author dyb
@@ -25,7 +27,7 @@ public class AlipayAuthCallbackController {
     private static final Logger logger = LoggerFactory.getLogger(AlipayAuthCallbackController.class);
 
     @Resource
-    private AlipayRequestAbstractRequest alipayOpenAuthTokenAppRequestImpl;
+    private AlipayAbstractRequest alipayOpenAuthTokenAppRequestImpl;
     /**
      * 支付宝授权回调接口
      * @param appId
@@ -35,9 +37,18 @@ public class AlipayAuthCallbackController {
     public String authCallback(@RequestParam(value = "app_id")String appId ,@RequestParam(value = "app_auth_code")String appAuthCode){
 //    TODO 返回开发者appId 、商户授权code（有效期24小时）
         logger.info("appId:{},appAuthCode:{}",appId,appAuthCode);
+        AlipayOpenAuthTokenAppRequestBizContentBean bizContentBean = new AlipayOpenAuthTokenAppRequestBizContentBean();
+        bizContentBean.setCode(appAuthCode);
+        bizContentBean.setGrantType("authorization_code");
         try {
-            alipayOpenAuthTokenAppRequestImpl.service();
+            alipayOpenAuthTokenAppRequestImpl.service(bizContentBean);
         } catch (AlipayApiException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
             e.printStackTrace();
         }
         return null;

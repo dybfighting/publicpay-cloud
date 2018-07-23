@@ -3,7 +3,7 @@ package com.publicpay.edu.alipay.request.impl;
 import com.alipay.api.AlipayApiException;
 import com.alipay.api.request.AlipayOpenAuthTokenAppQueryRequest;
 import com.alipay.api.response.AlipayOpenAuthTokenAppQueryResponse;
-import com.publicpay.edu.alipay.request.AlipayRequestAbstractRequest;
+import com.publicpay.edu.alipay.request.AlipayAbstractRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -16,11 +16,11 @@ import org.springframework.stereotype.Service;
  * @date 2018/7/19 上午11:00
  */
 @Service
-public class AlipayOpenAuthTokenAppQueryRequestImpl extends AlipayRequestAbstractRequest {
+public class AlipayOpenAuthTokenAppQueryRequestImpl extends AlipayAbstractRequest {
 
     private static final Logger logger = LoggerFactory.getLogger(AlipayOpenAuthTokenAppQueryRequestImpl.class);
     @Override
-    public void service() throws AlipayApiException {
+    public AlipayOpenAuthTokenAppQueryResponse service(Object obj) throws AlipayApiException {
         AlipayOpenAuthTokenAppQueryRequest request = new AlipayOpenAuthTokenAppQueryRequest();
         request.setBizContent("{" +
                 "\"app_auth_token\":\"201509BBeff9351ad1874306903e96b91d248A36\"" +
@@ -31,5 +31,6 @@ public class AlipayOpenAuthTokenAppQueryRequestImpl extends AlipayRequestAbstrac
         } else {
             System.out.println("调用失败");
         }
+        return response;
     }
 }
