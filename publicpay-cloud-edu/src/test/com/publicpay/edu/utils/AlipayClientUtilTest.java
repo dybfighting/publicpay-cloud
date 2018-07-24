@@ -2,7 +2,6 @@ package com.publicpay.edu.utils;
 
 import com.alipay.api.AlipayApiException;
 import com.publicpay.edu.BaseTest;
-import com.publicpay.edu.alipay.utils.AlipayClientUtil;
 import org.junit.Test;
 
 /**
@@ -16,6 +15,5 @@ public class AlipayClientUtilTest extends BaseTest {
 
     @Test
     public void testAlipayOpenAuthTokenAppRequest() throws AlipayApiException {
-       AlipayClientUtil.alipayOpenAuthTokenAppRequest();
     }
 }

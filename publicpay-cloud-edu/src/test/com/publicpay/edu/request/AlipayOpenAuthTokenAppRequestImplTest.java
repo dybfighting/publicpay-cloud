@@ -8,8 +8,6 @@ import com.publicpay.edu.alipay.request.impl.AlipayOpenAuthTokenAppRequestImpl;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.lang.reflect.InvocationTargetException;
-
 /**
  * @author dyb
  * @version V1.0
@@ -34,11 +32,7 @@ public class AlipayOpenAuthTokenAppRequestImplTest extends BaseTest{
 //                "  }");
         try {
             alipayOpenAuthTokenAppRequestImpl.service(bizContentBean);
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

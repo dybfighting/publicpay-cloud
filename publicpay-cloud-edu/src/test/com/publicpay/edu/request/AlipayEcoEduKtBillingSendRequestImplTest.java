@@ -1,13 +1,11 @@
 package com.publicpay.edu.request;
 
-import com.alipay.api.AlipayApiException;
 import com.publicpay.edu.BaseTest;
 import com.publicpay.edu.alipay.bean.AlipayEcoEduKtBillingSendRequestBizContentBean;
 import com.publicpay.edu.alipay.request.AlipayAbstractRequest;
 import org.junit.Test;
 
 import javax.annotation.Resource;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,12 +27,12 @@ public class AlipayEcoEduKtBillingSendRequestImplTest extends BaseTest {
         List<AlipayEcoEduKtBillingSendRequestBizContentBean.User> users = new ArrayList<>();
         AlipayEcoEduKtBillingSendRequestBizContentBean.User user = new AlipayEcoEduKtBillingSendRequestBizContentBean.User();
         user.setUserName("张三");
-        user.setUserMobile("18xxxxxxxxx");
+        user.setUserMobile("18742212348");
         user.setUserRelation("1");
-        user.setUserChangeMobile("13xxxxxxxxx");
+//        user.setUserChangeMobile("13xxxxxxxxx");
         users.add(user);
         bizContentBean.setUsers(users);
-        bizContentBean.setSchool_pid("20880012939123234423");
+        bizContentBean.setSchool_pid("2088102176300662");
         bizContentBean.setSchoolNo("36010300000008");
         bizContentBean.setChildName("张晓晓");
         bizContentBean.setGrade("高一");
@@ -62,13 +60,7 @@ public class AlipayEcoEduKtBillingSendRequestImplTest extends BaseTest {
 
         try {
             alipayEcoEduKtBillingSendRequestImpl.service(bizContentBean);
-        } catch (AlipayApiException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         //        "{" +

@@ -1,6 +1,5 @@
 package com.publicpay.edu.request;
 
-import com.alipay.api.AlipayApiException;
 import com.publicpay.edu.BaseTest;
 import com.publicpay.edu.alipay.bean.AlipayEcoEduKtBillingSendRequestBizContentBean;
 import com.publicpay.edu.alipay.bean.AlipayEcoEduKtStudentModifyRequestBizContentBean;
@@ -8,7 +7,6 @@ import com.publicpay.edu.alipay.request.AlipayAbstractRequest;
 import org.junit.Test;
 
 import javax.annotation.Resource;
-import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,11 +23,11 @@ public class AlipayEcoEduKtStudentModifyRequestTest extends BaseTest {
     private AlipayAbstractRequest alipayEcoEduKtStudentModifyRequest;
 
     @Test
-    public void test() throws InvocationTargetException, AlipayApiException, IllegalAccessException, NoSuchMethodException {
+    public void test() throws Exception {
         AlipayEcoEduKtStudentModifyRequestBizContentBean bizContentBean = new AlipayEcoEduKtStudentModifyRequestBizContentBean();
         bizContentBean.setIsvPid("2088121212121212");
-        bizContentBean.setSchoolPid("2088101117955611");
-        bizContentBean.setSchoolNo("11010100000001");
+        bizContentBean.setSchoolPid("2088102176300662");
+        bizContentBean.setSchoolNo("36010300000008");
         bizContentBean.setStudentNo("57de63cb1ef157595c005467");
         bizContentBean.setChildName("张三");
         bizContentBean.setStudentCode("6589154");

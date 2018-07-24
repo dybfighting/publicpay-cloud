@@ -1,13 +1,11 @@
 package com.publicpay.edu.request;
 
-import com.alipay.api.AlipayApiException;
 import com.publicpay.edu.BaseTest;
 import com.publicpay.edu.alipay.bean.AlipayEcoEduKtStudentQueryRequestBizContentBean;
 import com.publicpay.edu.alipay.request.AlipayAbstractRequest;
 import org.junit.Test;
 
 import javax.annotation.Resource;
-import java.lang.reflect.InvocationTargetException;
 
 /**
  * @author dyb
@@ -21,7 +19,7 @@ public class AlipayEcoEduKtStudentQueryRequestImplTest extends BaseTest{
     private AlipayAbstractRequest alipayEcoEduKtStudentQueryRequestImpl;
 
     @Test
-    public void test() throws InvocationTargetException, AlipayApiException, IllegalAccessException, NoSuchMethodException {
+    public void test() throws Exception {
         AlipayEcoEduKtStudentQueryRequestBizContentBean bizContentBean = new AlipayEcoEduKtStudentQueryRequestBizContentBean();
 
         bizContentBean.setIsvPid("2088121212121212");

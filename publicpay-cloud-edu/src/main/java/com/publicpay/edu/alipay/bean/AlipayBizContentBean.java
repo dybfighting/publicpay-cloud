@@ -2,7 +2,6 @@ package com.publicpay.edu.alipay.bean;
 
 import com.alibaba.fastjson.JSONObject;
 import com.publicpay.edu.alipay.annotation.BeanToJson;
-import com.publicpay.edu.alipay.constant.Constant4AlipayEdu;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.publicpay.edu.alipay.constant.Constant4AlipayEdu.APP_AUTH_TOKEN;
+import static com.publicpay.edu.alipay.constant.Constant4AlipayEdu.*;
 
 /**
  * @author dyb
@@ -28,11 +27,13 @@ public class AlipayBizContentBean {
 
     public static final List<String> filterList = new ArrayList<>();
     static {
-        filterList.add(Constant4AlipayEdu.USERS);
-        filterList.add(Constant4AlipayEdu.CHARGEITEM);
+        filterList.add(USERS);
+        filterList.add(CHARGEITEM);
+        filterList.add(GOODS_DETAIL);
+        filterList.add(REFUND_ROYALTY_PARAMETERS);
     }
     @BeanToJson(APP_AUTH_TOKEN)
-    private String appAuthToken;
+    private String appAuthToken;//
 
 
     public String getAppAuthToken() {
@@ -104,7 +105,7 @@ public class AlipayBizContentBean {
                 Field field2 = fields2[j];
                 String name2 = field2.getName();
                 String type2 = field2.getGenericType().toString();
-                logger.info("类型:{}",type2);
+//                logger.info("类型:{}",type2);
                 String key2 = field2.getAnnotation(BeanToJson.class).value();
                 try {
                     Method method2 = e.getClass().getMethod("get" + name2.substring(0, 1).toUpperCase() + name2.substring(1, name2.length()), null);

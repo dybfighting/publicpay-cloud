@@ -36,7 +36,7 @@ public class AlipayEcoEduKtSchoolinfoModifyRequestImplTest extends BaseTest{
         bizContentBean.setIsvNotifyUrl("http://127.0.0.1:8192/payNotify");
         bizContentBean.setIsvPid("2088121212121212");
         bizContentBean.setIsvPhone("13300000000");
-        bizContentBean.setSchoolPid("20880012939123234423");
+        bizContentBean.setSchoolPid("2088102176300662");
         bizContentBean.setAppAuthToken("201807BB174206f064a549a0b48496d880310X66");
 //        "{" +
 //                "\"school_name\":\"杭州市西湖第一实验学校\"," +
@@ -64,11 +64,7 @@ public class AlipayEcoEduKtSchoolinfoModifyRequestImplTest extends BaseTest{
 //                "  }")
         try {
             alipayEcoEduKtSchoolinfoModifyRequestImpl.service(bizContentBean);
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

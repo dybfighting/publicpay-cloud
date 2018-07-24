@@ -35,13 +35,7 @@ public class AlipayEcoEduKtBillingQueryRequestImplTest extends BaseTest {
 //                "  }"
         try {
             alipayEcoEduKtBillingQueryRequestImpl.service(bizContentBean);
-        } catch (AlipayApiException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

@@ -1,13 +1,11 @@
 package com.publicpay.edu.request;
 
-import com.alipay.api.AlipayApiException;
 import com.publicpay.edu.BaseTest;
 import com.publicpay.edu.alipay.bean.AlipayEcoEduKtBillingModifyRequestBizContentBean;
 import com.publicpay.edu.alipay.request.AlipayAbstractRequest;
 import org.junit.Test;
 
 import javax.annotation.Resource;
-import java.lang.reflect.InvocationTargetException;
 
 /**
  * @author dyb
@@ -55,13 +53,7 @@ public class AlipayEcoEduKtBillingModifyRequestImplTest extends BaseTest {
 //                        "  }"
         try {
             alipayEcoEduKtBillingModifyRequestImpl.service(bizContentBean);
-        } catch (AlipayApiException e) {
-            e.printStackTrace();
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 

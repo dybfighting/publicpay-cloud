@@ -122,4 +122,34 @@ public class Constant4AlipayEdu {
      */
     public static final String STUDENT_NO = "student_no";
 
+    /**
+     * 退款接口
+     */
+    public static final String REFUND_FEE = "refund_fee";
+    public static final String OPERATOR_ID = "operator_id";//String	可选	30	商户的操作员编号
+    public static final String STORE_ID = "store_id";//可选	32	商户的门店编号
+    public static final String TERMINAL_ID = "terminal_id";//可选	32	商户的终端编号
+    public static final String REFUND_CURRENCY = "refund_currency";//可选	8	订单退款币种信息
+    public static final String GMT_REFUND_PAY = "gmt_refund_pay";//Date	必填	32	退款支付时间
+    public static final String STORE_NAME = "store_name";//String	选填	512	交易在支付时候的门店名称
+    public static final String PRESENT_REFUND_BUYER_AMOUNT = "present_refund_buyer_amount";//String	选填	11	本次退款金额中买家退款金额
+    public static final String PRESENT_REFUND_DISCOUNT_AMOUNT = "present_refund_discount_amount";//String	选填	11	本次退款金额中平台优惠退款金额
+    public static final String PRESENT_REFUND_MDISCOUNT_AMOUNT = "present_refund_mdiscount_amount";//String	选填	11	本次退款金额中商家优惠退款金额
+    public static final String GOODS_DETAIL = "goods_detail";
+    public static final String GOODS_ID = "goods_id";
+    public static final String ALIPAY_GOODS_ID = "alipay_goods_id";
+    public static final String GOODS_NAME = "goods_name";
+    public static final String QUANTITY = "quantity";
+    public static final String PRICE = "price";
+    public static final String GOODS_CATEGORY = "goods_category";
+    public static final String BODY = "body";
+    public static final String SHOW_URL = "show_url";
+    public static final String REFUND_ROYALTY_PARAMETERS = "refund_royalty_parameters";
+    public static final String ROYALTY_TYPE = "royalty_type";
+    public static final String TRANS_OUT = "trans_out";
+    public static final String TRANS_OUT_TYPE = "trans_out_type";
+    public static final String TRANS_IN_TYPE = "trans_in_type";
+    public static final String TRANS_IN = "trans_in";
+    public static final String AMOUNT_PERCENTAGE = "amount_percentage";
+    public static final String DESC = "desc";
 }
