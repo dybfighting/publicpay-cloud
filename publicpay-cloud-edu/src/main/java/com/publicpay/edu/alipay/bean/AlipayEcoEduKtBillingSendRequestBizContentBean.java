@@ -283,12 +283,7 @@ public class AlipayEcoEduKtBillingSendRequestBizContentBean extends AlipayBizCon
 
         @Override
         public String toString() {
-            return "User{" +
-                    "userMobile='" + userMobile + '\'' +
-                    ", userName='" + userName + '\'' +
-                    ", userRelation='" + userRelation + '\'' +
-                    ", userChangeMobile='" + userChangeMobile + '\'' +
-                    '}';
+            return ToStringBuilder.reflectionToString(this);
         }
     }
 }

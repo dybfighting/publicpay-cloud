@@ -11,7 +11,7 @@ import static com.publicpay.edu.alipay.constant.Constant4AlipayEdu.*;
  * @author dyb
  * @version V1.0
  * @Package com.publicpay.edu.alipay.bean
- * @Description: 退款请求
+ * @Description: 退款请求接口
  * @date 2018/7/24 下午2:30
  */
 public class AlipayTradeRefundRequestBizContentBean extends AlipayBizContentBean{
