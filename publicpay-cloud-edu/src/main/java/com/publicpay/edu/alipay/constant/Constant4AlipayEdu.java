@@ -8,6 +8,8 @@ package com.publicpay.edu.alipay.constant;
  * @date 2018/7/19 上午10:44
  */
 public class Constant4AlipayEdu {
+    public static final String SUCCESS = "success";
+    public static final String ERROR = "error";
     /**
      * 公共
      */

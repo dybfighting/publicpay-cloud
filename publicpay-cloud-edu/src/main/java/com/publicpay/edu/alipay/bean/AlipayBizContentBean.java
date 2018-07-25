@@ -134,22 +134,4 @@ public class AlipayBizContentBean {
         }).collect(Collectors.toList());
     }
 
-    public static void main(String[] args) {
-        AlipayEcoEduKtBillingSendRequestBizContentBean a = new AlipayEcoEduKtBillingSendRequestBizContentBean();
-        a.setSchool_pid("123");
-        AlipayEcoEduKtBillingSendRequestBizContentBean.User user= new AlipayEcoEduKtBillingSendRequestBizContentBean.User();
-        user.setUserName("丁");
-        List<AlipayEcoEduKtBillingSendRequestBizContentBean.User> users = new ArrayList<AlipayEcoEduKtBillingSendRequestBizContentBean.User>();
-        users.add(user);
-        a.setUsers(users);
-        try {
-            System.out.println(a.getBitContent());
-        } catch (NoSuchMethodException e) {
-            e.printStackTrace();
-        } catch (InvocationTargetException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-    }
 }

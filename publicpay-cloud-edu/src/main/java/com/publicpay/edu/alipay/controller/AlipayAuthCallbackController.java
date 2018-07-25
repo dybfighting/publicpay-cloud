@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 
 import static com.publicpay.edu.alipay.constant.Constant4AlipayEdu.AUTHORIZATION_CODE;
+import static com.publicpay.edu.alipay.constant.Constant4AlipayEdu.SUCCESS;
 
 /**
  * @author dyb
@@ -45,7 +46,8 @@ public class AlipayAuthCallbackController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
+
+        return SUCCESS;
     }
 
     /**

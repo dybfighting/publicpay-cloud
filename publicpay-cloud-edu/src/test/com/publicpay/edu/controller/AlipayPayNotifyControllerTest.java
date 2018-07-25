@@ -22,7 +22,7 @@ import java.util.*;
  * @author dyb
  * @version V1.0
  * @Package com.publicpay.edu.controller
- * @Description: TODO
+ * @Description: 模拟支付通知
  * @date 2018/7/24 下午4:59
  */
 public class AlipayPayNotifyControllerTest extends BaseTest {
