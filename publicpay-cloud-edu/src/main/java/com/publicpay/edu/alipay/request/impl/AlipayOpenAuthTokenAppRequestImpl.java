@@ -24,14 +24,6 @@ public class AlipayOpenAuthTokenAppRequestImpl extends AlipayAbstractRequest {
         AlipayOpenAuthTokenAppRequest request = new AlipayOpenAuthTokenAppRequest();
         request.setBizContent(bizContentBean.getBitContent());
         AlipayOpenAuthTokenAppResponse response = execute(request);
-//        String userId = response.getUserId();//商户pid
-//        String appAuthToken = response.getAppAuthToken();
-//        String authAppId = response.getAuthAppId();
-//        String code = response.getCode();
-//        String subCode = response.getSubCode();
-//        String msg = response.getMsg();
-//        String body = response.getBody();
-//        logger.info("code:{},subCode:{},msg:{},body:{},userId:{},appAuthToken:{},authAppId:{}",code,subCode,msg,body,userId,appAuthToken,authAppId);
         if(response.isSuccess()){
             System.out.println("调用成功");
         } else {
