@@ -35,6 +35,8 @@ public class AlipayEcoEduKtBillingModifyRequestImpl extends AlipayAbstractReques
             System.out.println("调用成功");
         } else {
             System.out.println("调用失败");
+            response.getSubCode();
+            response.getSubMsg();
         }
         return response;
     }

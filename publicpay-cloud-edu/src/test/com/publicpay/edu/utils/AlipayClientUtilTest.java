@@ -15,5 +15,6 @@ public class AlipayClientUtilTest extends BaseTest {
 
     @Test
     public void testAlipayOpenAuthTokenAppRequest() throws AlipayApiException {
+
     }
 }

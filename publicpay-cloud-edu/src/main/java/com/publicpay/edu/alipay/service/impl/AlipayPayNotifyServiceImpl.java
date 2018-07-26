@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Assert;
 
+import java.util.Base64;
 import java.util.Map;
 import java.util.Set;
 
@@ -56,9 +57,22 @@ public class AlipayPayNotifyServiceImpl implements AlipayPayNotifyService {
         logger.info("checkResult:{}", checkResult);
         Assert.isTrue(checkResult, "支付宝支付异步通知验签错误");
 
-        
+       String passbackParams =  alipayPayNotifyUrlRequestBean.getPassback_params();
+        /**
+         * 关于支付成功的异步回调参数，教育缴费平台将isv的账单号和平台的账单号都放入回调参数（passback_params），
+         * 平台对参数进行了base64编码，需要解码后才能看到具体的值，参数格式为URL参数（orderNo=&isvOrderNo=）。
+         * 同时不建议使用异步回调通知里面的out_trade_no，建议使用passback_param这个参数。
+         * TODO
+         */
+       String dePassbackParams = new String(Base64.getDecoder().decode(passbackParams));
+       String[] pbpb = dePassbackParams.split("&");
+       String[] orderKV = pbpb[0].split("=");
+       String[] isvOrderNoKV = pbpb[1].split("=");
 
 
-        return null;
+
+
+
+       return null;
     }
 }

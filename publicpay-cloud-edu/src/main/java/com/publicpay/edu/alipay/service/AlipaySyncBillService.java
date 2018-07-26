@@ -1,5 +1,7 @@
 package com.publicpay.edu.alipay.service;
 
+import com.publicpay.edu.alipay.bean.AlipayEcoEduKtBillingModifyRequestBizContentBean;
+
 /**
  * @author dyb
  * @version V1.0
@@ -9,5 +11,5 @@ package com.publicpay.edu.alipay.service;
  */
 public interface AlipaySyncBillService {
 
-    String syncBill();
+    String syncBill(AlipayEcoEduKtBillingModifyRequestBizContentBean alipayEcoEduKtBillingModifyRequestBizContentBean);
 }
