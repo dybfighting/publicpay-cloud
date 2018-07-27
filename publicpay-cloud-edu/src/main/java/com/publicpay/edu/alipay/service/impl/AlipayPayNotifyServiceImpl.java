@@ -36,6 +36,7 @@ public class AlipayPayNotifyServiceImpl implements AlipayPayNotifyService {
      * 第四步： 使用RSA的验签方法，通过签名字符串、签名参数（经过base64解码）及支付宝公钥验证签名。
      * 第五步：在步骤四验证签名正确后，必须再严格按照如下描述校验通知数据的正确性。
      * <p>
+     *  TODO 验证参数
      * 1、商户需要验证该通知数据中的out_trade_no是否为商户系统中创建的订单号；
      * 2、判断total_amount是否确实为该订单的实际金额（即商户订单创建时的金额）；
      * 3、校验通知中的seller_id（或者seller_email) 是否为out_trade_no这笔单据的对应的操作方（有的时候，一个商户可能有多个seller_id/seller_email）；
@@ -66,6 +67,12 @@ public class AlipayPayNotifyServiceImpl implements AlipayPayNotifyService {
          */
        String dePassbackParams = new String(Base64.getDecoder().decode(passbackParams));
        String[] pbpb = dePassbackParams.split("&");
+        /**
+         * 缴费项序号，如果缴费项是多选模式，此项为必填，建议从1开始的连续数字，
+         用户支付成功后，通过passback_params参数带回已选择的缴费项。例如:orderNo=uoo234234&isvOrderNo=24werwe&items=1-2|2-1|3-5
+         1-2|2-1|3-5 表示：缴费项序列号-缴费项数|缴费项序列号-缴费项数
+         TODO
+         */
        String[] orderKV = pbpb[0].split("=");
        String[] isvOrderNoKV = pbpb[1].split("=");
 

@@ -32,6 +32,10 @@ public class AlipayEcoEduKtBillingSendRequestBizContentBean extends AlipayBizCon
     private String studentCode;//特殊可选	20	学生的学号，只支持字母和数字类型，一般以教育局学号为准，作为学生的唯一标识。此字段与student_identify、家长user_mobile至少选一个
     @BeanToJson(STUDENT_IDENTIFY)
     private String studentIdentify;//	特殊可选	18	学生的身份证号，如果ISV有学生身份证号，则同步身份证号作为学生唯一标识。此字段与student_code、家长user_mobile至少选一个。大陆身份证必须是18位 ， 其它地区或国家的身份证开头需要加"IC"开头区分并且不超过18位，但查询账单的时候不要带"IC"
+
+    @BeanToJson(STATUS)
+    private String status;//用于删除孩子，状态为“D”，表示删除孩子，状态“U”表示孩子信息添加或更新。为空则不更新孩子信息
+
     @BeanToJson(OUT_TRADE_NO)
     private String outTradeNo;//必选	128	ISV端的缴费账单编号
     @BeanToJson(CHARGE_BILL_TITLE)
@@ -177,6 +181,13 @@ public class AlipayEcoEduKtBillingSendRequestBizContentBean extends AlipayBizCon
         this.users = users;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
 
     public static class ChargeItem{
         @BeanToJson(ITEM_NAME)

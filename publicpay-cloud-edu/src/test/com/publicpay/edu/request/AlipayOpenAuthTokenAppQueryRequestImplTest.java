@@ -21,7 +21,7 @@ public class AlipayOpenAuthTokenAppQueryRequestImplTest extends BaseTest {
     @Test
     public void test(){
         AlipayBizContentBean alipayBizContentBean = new AlipayBizContentBean();
-        alipayBizContentBean.setAppAuthToken("201807BB174206f064a549a0b48496d880310X66");
+        alipayBizContentBean.setAppAuthToken("201807BBb4df09a0be204dd7b21003df9e009X66");
         try {
 
             System.out.println(alipayOpenAuthTokenAppQueryRequestImpl.service(alipayBizContentBean).getBody());

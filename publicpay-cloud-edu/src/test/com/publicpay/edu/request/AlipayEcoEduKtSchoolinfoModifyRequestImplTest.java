@@ -3,11 +3,11 @@ package com.publicpay.edu.request;
 import com.alipay.api.AlipayApiException;
 import com.publicpay.edu.BaseTest;
 import com.publicpay.edu.alipay.bean.AlipayEcoEduKtSchoolinfoModifyRequestBizContentBean;
+import com.publicpay.edu.alipay.enums.AlipaySchoolTypeEnum;
 import com.publicpay.edu.alipay.request.AlipayAbstractRequest;
 import org.junit.Test;
 
 import javax.annotation.Resource;
-import java.lang.reflect.InvocationTargetException;
 
 /**
  * @author dyb
@@ -24,7 +24,7 @@ public class AlipayEcoEduKtSchoolinfoModifyRequestImplTest extends BaseTest{
         AlipayEcoEduKtSchoolinfoModifyRequestBizContentBean bizContentBean = new AlipayEcoEduKtSchoolinfoModifyRequestBizContentBean();
         bizContentBean.setSchoolName("杭州市西湖第一实验学校");
         bizContentBean.setSchoolStdcode("3133005132");
-        bizContentBean.setSchoolType("4");
+        bizContentBean.setSchoolType(AlipaySchoolTypeEnum.MIDDLE_SCHOOL.getValue());
         bizContentBean.setProvinceCode("330000");
         bizContentBean.setProvinceName("杭州市");
         bizContentBean.setCityCode("330100");
@@ -37,7 +37,7 @@ public class AlipayEcoEduKtSchoolinfoModifyRequestImplTest extends BaseTest{
         bizContentBean.setIsvPid("2088121212121212");
         bizContentBean.setIsvPhone("13300000000");
         bizContentBean.setSchoolPid("2088102176300662");
-        bizContentBean.setAppAuthToken("201807BB174206f064a549a0b48496d880310X66");
+        bizContentBean.setAppAuthToken("201807BBb4df09a0be204dd7b21003df9e009X66");
 //        "{" +
 //                "\"school_name\":\"杭州市西湖第一实验学校\"," +
 ////                "\"school_icon\":\"http://ecopublic-dev.oss-cn-hangzhou.aliyuncs.com/eco/edu_alipay/school/school.png\"," +

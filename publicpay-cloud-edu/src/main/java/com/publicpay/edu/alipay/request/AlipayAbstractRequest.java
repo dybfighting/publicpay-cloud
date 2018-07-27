@@ -6,6 +6,7 @@ import com.alipay.api.AlipayRequest;
 import com.alipay.api.AlipayResponse;
 import com.publicpay.edu.alipay.bean.AlipayBizContentBean;
 import com.publicpay.edu.alipay.utils.AlipayClientUtil;
+import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -26,6 +27,11 @@ public abstract class AlipayAbstractRequest {
     public <T extends AlipayResponse> T execute(AlipayRequest<T> request) throws AlipayApiException {
         AlipayClient alipayClient = AlipayClientUtil.getInstance();
         return alipayClient.execute(request);
+    }
+
+    public  AlipayResponse preHandleResponse(AlipayResponse response ){
+        logger.info(ToStringBuilder.reflectionToString(response));
+        return response;
     }
 
 

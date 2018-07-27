@@ -2,6 +2,8 @@ package com.publicpay.edu.request;
 
 import com.publicpay.edu.BaseTest;
 import com.publicpay.edu.alipay.bean.AlipayEcoEduKtBillingSendRequestBizContentBean;
+import com.publicpay.edu.alipay.enums.AlipayChargeTypeEnum;
+import com.publicpay.edu.alipay.enums.AlipayUserRelationEnum;
 import com.publicpay.edu.alipay.request.AlipayAbstractRequest;
 import org.junit.Test;
 
@@ -14,6 +16,14 @@ import java.util.List;
  * @version V1.0
  * @Package com.publicpay.edu.request
  * @Description: 发送账单
+ * 服务商将自有缴费系统中的缴费账单发送到支付宝教育缴费平台。缴费账单中需要至少传入家长手机号、学生身份证号、学生学号中一项数据，用于匹配缴费账户。用户在支付宝教育缴费APP中创建缴费账户后，就可以查询到匹配的缴费账单了。请参考“教育缴费账单发送接口”。
+ * <p>
+ * 缴费账单有两种类型，在创建时根据业务类型进行选择。
+ * <p>
+ * 缴费项不可选：用户不能对缴费账单中的缴费项目进行选择，所有的缴费项目都必须一起缴纳。
+ * 缴费项可选：用户可以对缴费账单中的缴费项目进行选择，根据最终选择的缴费项目进行缴纳。支持对缴费项目设置单项、多选和默认勾选等属性。
+ * 注意事项：
+ * （1）教育缴费平台使用入参数中的partner_pid和out_trade_no来唯一标识缴费账单。当重复传入缴费账单时，平台不会新建账单，会返回原账单编号。
  * @date 2018/7/23 下午3:49
  */
 public class AlipayEcoEduKtBillingSendRequestImplTest extends BaseTest {
@@ -28,7 +38,7 @@ public class AlipayEcoEduKtBillingSendRequestImplTest extends BaseTest {
         AlipayEcoEduKtBillingSendRequestBizContentBean.User user = new AlipayEcoEduKtBillingSendRequestBizContentBean.User();
         user.setUserName("张三");
         user.setUserMobile("18742212348");
-        user.setUserRelation("1");
+        user.setUserRelation(AlipayUserRelationEnum.FATHER.getValue());
 //        user.setUserChangeMobile("13xxxxxxxxx");
         users.add(user);
         bizContentBean.setUsers(users);
@@ -40,8 +50,9 @@ public class AlipayEcoEduKtBillingSendRequestImplTest extends BaseTest {
         bizContentBean.setStudentCode("2098453900091");
         bizContentBean.setStudentIdentify("310193199905289483");
         bizContentBean.setOutTradeNo("20160232343253253453");
+        bizContentBean.setStatus("U");
         bizContentBean.setChargeBillTitle("学生开学收费项");
-        bizContentBean.setChargeType("M");
+        bizContentBean.setChargeType(AlipayChargeTypeEnum.OPTIONAL.getValue());
         List<AlipayEcoEduKtBillingSendRequestBizContentBean.ChargeItem> chargeItems = new ArrayList<>();
         AlipayEcoEduKtBillingSendRequestBizContentBean.ChargeItem chargeItem = new AlipayEcoEduKtBillingSendRequestBizContentBean.ChargeItem();
         chargeItem.setItemName("校服费");
@@ -56,7 +67,7 @@ public class AlipayEcoEduKtBillingSendRequestImplTest extends BaseTest {
         bizContentBean.setEndEnable("Y");
         bizContentBean.setPartnerId("201600129391238873");
 
-        bizContentBean.setAppAuthToken("201807BB174206f064a549a0b48496d880310X66");
+        bizContentBean.setAppAuthToken("201807BBb4df09a0be204dd7b21003df9e009X66");
 
         try {
             alipayEcoEduKtBillingSendRequestImpl.service(bizContentBean);

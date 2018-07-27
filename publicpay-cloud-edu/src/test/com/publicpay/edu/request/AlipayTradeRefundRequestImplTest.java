@@ -83,6 +83,7 @@ public class AlipayTradeRefundRequestImplTest extends BaseTest {
 //                "\"desc\":\"分账给2088101126708402\"" +
 //                "        }]" +
 //                "  }");
+        bizContentBean.setAppAuthToken("201807BBb4df09a0be204dd7b21003df9e009X66");
         alipayTradeRefundRequestImpl.service(bizContentBean);
     }
 }

@@ -13,6 +13,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import static com.publicpay.edu.alipay.constant.Constant4AlipayEdu.AUTHORIZATION_CODE;
+import static com.publicpay.edu.alipay.constant.Constant4AlipayEdu.ERROR;
 import static com.publicpay.edu.alipay.constant.Constant4AlipayEdu.SUCCESS;
 
 /**
@@ -50,11 +51,12 @@ public class AlipayAuthCallbackController {
         //获得app_auth_code ,换token,存入该学校的记录当中
         //发送学校信息给支付宝
         //发送账单给支付宝
-//        try {
-//            alipayOpenAuthTokenAppRequestImpl.service(bizContentBean);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+        try {
+            alipayOpenAuthTokenAppRequestImpl.service(bizContentBean);
+        } catch (Exception e) {
+            logger.error("",e);
+            return ERROR;
+        }
 
         return SUCCESS;
     }

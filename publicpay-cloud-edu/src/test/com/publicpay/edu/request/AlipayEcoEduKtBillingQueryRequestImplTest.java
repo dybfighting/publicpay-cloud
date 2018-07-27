@@ -1,13 +1,11 @@
 package com.publicpay.edu.request;
 
-import com.alipay.api.AlipayApiException;
 import com.publicpay.edu.BaseTest;
 import com.publicpay.edu.alipay.bean.AlipayEcoEduKtBillingQueryRequestBizContentBean;
 import com.publicpay.edu.alipay.request.AlipayAbstractRequest;
 import org.junit.Test;
 
 import javax.annotation.Resource;
-import java.lang.reflect.InvocationTargetException;
 
 /**
  * @author dyb
@@ -26,7 +24,7 @@ public class AlipayEcoEduKtBillingQueryRequestImplTest extends BaseTest {
         bizContentBean.setIsvPid("2088121212121212");
         bizContentBean.setSchoolPid("2088101117955611");
         bizContentBean.setOutTradeNo("58de07de7bb90a437553e464");
-        bizContentBean.setAppAuthToken("201807BB174206f064a549a0b48496d880310X66");
+        bizContentBean.setAppAuthToken("201807BBb4df09a0be204dd7b21003df9e009X66");
 
 //        "{" +
 //                "\"isv_pid\":\"2088121212121212\"," +
