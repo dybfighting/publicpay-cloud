@@ -37,7 +37,6 @@ public class AlipayEcoEduKtBillingModifyRequestImpl extends AlipayAbstractReques
             response.getSubCode();
             response.getSubMsg();
         }
-        preHandleResponse(response);
         return response;
     }
 }

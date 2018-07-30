@@ -29,7 +29,6 @@ public class AlipayOpenAuthTokenAppRequestImpl extends AlipayAbstractRequest {
         } else {
             System.out.println("调用失败");
         }
-        preHandleResponse(response);
         return response;
     }
 }
