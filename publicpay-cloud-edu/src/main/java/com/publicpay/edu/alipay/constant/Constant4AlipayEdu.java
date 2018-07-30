@@ -118,6 +118,7 @@ public class Constant4AlipayEdu {
      * 支付宝支付结果通知接口参数
      */
     public static final String NOTIFY_TIME = "notify_time";//
+    public static final String FUND_CHANNEL = "fundChannel";//支付渠道
 
     /**
      * 学生信息查询接口参数
@@ -154,4 +155,10 @@ public class Constant4AlipayEdu {
     public static final String TRANS_IN = "trans_in";
     public static final String AMOUNT_PERCENTAGE = "amount_percentage";
     public static final String DESC = "desc";
+
+    /**
+     * 优惠券信息
+     */
+    public static final String NAME = "name";
+
 }
