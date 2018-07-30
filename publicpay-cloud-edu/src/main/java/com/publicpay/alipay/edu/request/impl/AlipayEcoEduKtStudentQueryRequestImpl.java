@@ -21,6 +21,7 @@ import static com.publicpay.alipay.constant.Constant4AlipayEdu.APP_AUTH_TOKEN;
  * @date 2018/7/19 上午10:23
  */
 @Service
+@Deprecated
 public class AlipayEcoEduKtStudentQueryRequestImpl extends AlipayAbstractRequest {
 
     private static final Logger logger = LoggerFactory.getLogger(AlipayEcoEduKtStudentQueryRequestImpl.class);
