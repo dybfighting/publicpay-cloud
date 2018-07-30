@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	
+	<groupId>com.publicpay.cloud</groupId>
+	<artifactId>publicpay-cloud</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	<name>${project.artifactId}</name>
+	<description>PubicPayCloud project for Spring Boot</description>
+
+	<modules>
+		<!--&lt;!&ndash; 在Spring Boot Actuator的基础上提供简洁的可视化WEB UI &ndash;&gt;-->
+		<!--<module>publicpay-cloud-admin</module>-->
+
+		<!--&lt;!&ndash; 在Spring Cloud Eureka的基础上构建API注册中心 &ndash;&gt;-->
+		<!--<module>publicpay-cloud-registry</module>-->
+
+		<!--&lt;!&ndash; 在Spring Cloud Zuul的基础上构建API网关 &ndash;&gt;-->
+		<!--<module>publicpay-cloud-gateway</module>-->
+
+		<!--&lt;!&ndash; 提供账户服务入口 &ndash;&gt;-->
+		<!--<module>publicpay-cloud-account</module>-->
+
+		<!--&lt;!&ndash; 提供账单服务 &ndash;&gt;-->
+		<!--<module>publicpay-cloud-bill</module>-->
+
+		<!--&lt;!&ndash; 提供支付服务入口 &ndash;&gt;-->
+		<!--<module>publicpay-cloud-pay</module>-->
+
+		<!--&lt;!&ndash; 提供充值服务入口 &ndash;&gt;-->
+		<!--<module>publicpay-cloud-transcore</module>-->
+
+		<!-- 提供基础类入口 -->
+		<module>publicpay-cloud-base</module>
+
+		 <!--提供公共工具类入口-->
+		<!--<module>publicpay-cloud-commons</module>-->
+		<!-- 提供对账入口 -->
+		<!--<module>publicpay-cloud-balance-account</module>-->
+		<!--&lt;!&ndash; 提供H5页面入口 &ndash;&gt;-->
+		<!--<module>publicpay-cloud-web</module>-->
+
+		<!--&lt;!&ndash; 提供银联充值服务 &ndash;&gt;-->
+		<!--<module>publicpay-cloud-channel-unionpay</module>-->
+
+		<!--&lt;!&ndash; 在Spring Boot Actuator的基础上提供简洁的可视化WEB UI &ndash;&gt;-->
+		<!--<module>publicpay-cloud-business-portal</module>-->
+		<!---->
+		<!--&lt;!&ndash; 对银联提供接口的前置服务 &ndash;&gt;-->
+		<!--<module>publicpay-cloud-front</module>-->
+		<!---->
+		<!--&lt;!&ndash; 提官网服务 &ndash;&gt;-->
+		<!--<module>publicpay-cloud-portal</module>-->
+
+		<!--&lt;!&ndash; 商家中心 &ndash;&gt;-->
+		<!--<module>publicpay-cloud-merchant-center</module>-->
+		<!--&lt;!&ndash; 商家云账单&ndash;&gt;-->
+		<!--<module>publicpay-cloud-merchant-bill</module>-->
+		<module>publicpay-cloud-edu</module>
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<finalName>${project.artifactId}-${project.version}</finalName>
+	</properties>
+	
+	<!--<distributionManagement>-->
+        <!--<repository>-->
+            <!--<id>pay-releases</id>-->
+            <!--<name>pay nexus releases</name>-->
+            <!--<url>http://10.10.115.10:8081/nexus/content/repositories/releases</url>-->
+        <!--</repository>-->
+        <!--<snapshotRepository>-->
+            <!--<id>pay-snapshots</id>-->
+            <!--<name>pay nexus snapshots</name>-->
+            <!--<url>http://10.10.115.10:8081/nexus/content/repositories/snapshots</url>-->
+        <!--</snapshotRepository>-->
+    <!--</distributionManagement>-->
+
+	<dependencies>
+
+		<!-- 热部署 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>slf4j-log4j12</artifactId>
+				</exclusion>
+				<exclusion>
+					<groupId>log4j</groupId>
+					<artifactId>log4j</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jolokia</groupId>
+			<artifactId>jolokia-core</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<!--<scope>provided</scope>-->
+		</dependency>
+	</dependencies>
+
+	<dependencyManagement>
+
+		<dependencies>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>1.5.9.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
+	        <dependency>
+	            <groupId>org.springframework.cloud</groupId>
+	            <artifactId>spring-cloud-dependencies</artifactId>
+	            <version>Edgware.RELEASE</version>
+	            <type>pom</type>
+	            <scope>import</scope>
+	        </dependency>
+
+		</dependencies>
+
+	</dependencyManagement>
+
+	<build>
+		<finalName>${finalName}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<version>1.5.9.RELEASE</version>
+			</plugin>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<nonFilteredFileExtensions>
+						<nonFilteredFileExtension>crt</nonFilteredFileExtension>
+						<nonFilteredFileExtension>pem</nonFilteredFileExtension>
+						<nonFilteredFileExtension>pfx</nonFilteredFileExtension>
+					</nonFilteredFileExtensions>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
