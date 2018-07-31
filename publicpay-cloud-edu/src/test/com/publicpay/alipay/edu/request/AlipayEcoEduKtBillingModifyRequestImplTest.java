@@ -30,7 +30,7 @@ public class AlipayEcoEduKtBillingModifyRequestImplTest extends BaseTest {
         bizContentBean.setBuyerUserId("2088101117955611");
         bizContentBean.setRefundDetailItemList("{\"fund_channel\":\"ALIPAYACCOUNT\",\"amount\":12.00,\"real_amount\":12.00\"}");
 
-        bizContentBean.setAppAuthToken("201807BBb4df09a0be204dd7b21003df9e009X66");
+        bizContentBean.setAppAuthToken("201807BBc24a7f19028342289ac1f52cad022E66");
         //
 //   "{" +
 //                        "\"trade_no\":\"2014112611001004680073956707\"," +

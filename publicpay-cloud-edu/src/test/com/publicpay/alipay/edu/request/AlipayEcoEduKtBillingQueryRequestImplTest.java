@@ -23,7 +23,7 @@ public class AlipayEcoEduKtBillingQueryRequestImplTest extends BaseTest {
         bizContentBean.setIsvPid("2088121212121212");
         bizContentBean.setSchoolPid("2088101117955611");
         bizContentBean.setOutTradeNo("58de07de7bb90a437553e464");
-        bizContentBean.setAppAuthToken("201807BBb4df09a0be204dd7b21003df9e009X66");
+        bizContentBean.setAppAuthToken("201807BBc24a7f19028342289ac1f52cad022E66");
 
 //        "{" +
 //                "\"isv_pid\":\"2088121212121212\"," +

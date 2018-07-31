@@ -66,7 +66,7 @@ public class AlipayEcoEduKtBillingSendRequestImplTest extends BaseTest {
         bizContentBean.setEndEnable("Y");
         bizContentBean.setPartnerId("201600129391238873");
 
-        bizContentBean.setAppAuthToken("201807BBb4df09a0be204dd7b21003df9e009X66");
+        bizContentBean.setAppAuthToken("201807BBc24a7f19028342289ac1f52cad022E66");
 
         try {
             alipayEcoEduKtBillingSendRequestImpl.service(bizContentBean);

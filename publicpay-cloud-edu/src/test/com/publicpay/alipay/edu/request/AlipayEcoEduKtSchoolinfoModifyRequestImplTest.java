@@ -36,7 +36,7 @@ public class AlipayEcoEduKtSchoolinfoModifyRequestImplTest extends BaseTest{
         bizContentBean.setIsvPid("2088121212121212");
         bizContentBean.setIsvPhone("13300000000");
         bizContentBean.setSchoolPid("2088102176300662");
-        bizContentBean.setAppAuthToken("201807BBb4df09a0be204dd7b21003df9e009X66");
+        bizContentBean.setAppAuthToken("201807BBc24a7f19028342289ac1f52cad022E66");
 //        "{" +
 //                "\"school_name\":\"杭州市西湖第一实验学校\"," +
 ////                "\"school_icon\":\"http://ecopublic-dev.oss-cn-hangzhou.aliyuncs.com/eco/edu_alipay/school/school.png\"," +

@@ -25,7 +25,7 @@ public class AlipayOpenAuthTokenAppRequestImplTest extends BaseTest{
     public void testAlipayOpenAuthTokenAppRequestImpl() throws AlipayApiException {
         AlipayOpenAuthTokenAppRequestBizContentBean bizContentBean = new AlipayOpenAuthTokenAppRequestBizContentBean();
         bizContentBean.setGrantType(Constant4AlipayEdu.AUTHORIZATION_CODE);
-        bizContentBean.setCode("e1a42014cb384378a2b4163c1b8cbE66");
+        bizContentBean.setCode("b2284d679aac4f978465818892b38X66");
 //        bizContentBean.setRefreshToken("");
         //        request.setBizContent("{" +
 //                "\"grant_type\":\"authorization_code\"," +

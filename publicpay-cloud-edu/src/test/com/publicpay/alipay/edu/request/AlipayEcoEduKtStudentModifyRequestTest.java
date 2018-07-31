@@ -40,7 +40,7 @@ public class AlipayEcoEduKtStudentModifyRequestTest extends BaseTest {
         users.add(user);
         bizContentBean.setUsers(users);
         bizContentBean.setStatus("U");
-        bizContentBean.setAppAuthToken("201807BBb4df09a0be204dd7b21003df9e009X66");
+        bizContentBean.setAppAuthToken("201807BBc24a7f19028342289ac1f52cad022E66");
         alipayEcoEduKtStudentModifyRequest.service(bizContentBean);
         //        request.setBizContent("{" +
 //                "\"isv_pid\":\"2088121212121212\"," +
