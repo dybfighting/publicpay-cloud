@@ -1,6 +1,5 @@
 package com.publicpay.alipay.edu.request;
 
-import com.alipay.api.AlipayApiException;
 import com.publicpay.alipay.BaseTest;
 import com.publicpay.alipay.bean.AlipayEcoEduKtSchoolinfoModifyRequestBizContentBean;
 import com.publicpay.alipay.enums.AlipaySchoolTypeEnum;
@@ -19,7 +18,7 @@ public class AlipayEcoEduKtSchoolinfoModifyRequestImplTest extends BaseTest{
     @Resource
     private AlipayAbstractRequest alipayEcoEduKtSchoolinfoModifyRequestImpl;
     @Test
-    public void test() throws AlipayApiException {
+    public void test(){
         AlipayEcoEduKtSchoolinfoModifyRequestBizContentBean bizContentBean = new AlipayEcoEduKtSchoolinfoModifyRequestBizContentBean();
         bizContentBean.setSchoolName("杭州市西湖第一实验学校");
         bizContentBean.setSchoolStdcode("3133005132");
@@ -64,7 +63,8 @@ public class AlipayEcoEduKtSchoolinfoModifyRequestImplTest extends BaseTest{
         try {
             alipayEcoEduKtSchoolinfoModifyRequestImpl.service(bizContentBean);
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException();
+//            e.getCause();
         }
     }
 }
