@@ -26,6 +26,7 @@ public abstract class AlipayAbstractRequest {
 
 
     public <T extends AlipayResponse> T execute(AlipayRequest<T> request) throws AlipayApiException {
+        logger.info("请求bean:{}",ToStringBuilder.reflectionToString(request));
         AlipayClient alipayClient = AlipayClientUtil.getInstance();
         T t =  alipayClient.execute(request);
         logger.info("响应bean:{}",ToStringBuilder.reflectionToString(t));
