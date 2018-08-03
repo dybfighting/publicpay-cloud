@@ -3,7 +3,7 @@ package com.publicpay.alipay.controller;
 import com.alipay.api.internal.util.AlipaySignature;
 import com.publicpay.alipay.BaseTest;
 import com.publicpay.alipay.bean.AlipayPayNotifyUrlRequestBean;
-import org.apache.commons.beanutils.BeanUtils;
+import com.publicpay.alipay.utils.CommonUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.Before;
 import org.junit.Test;
@@ -55,9 +55,13 @@ public class AlipayPayNotifyControllerTest extends BaseTest {
         alipayPayNotifyUrlRequestBean.setVersion("1.0");
         alipayPayNotifyUrlRequestBean.setTrade_no("2013112011001004330000121536");
         alipayPayNotifyUrlRequestBean.setOut_trade_no("6823789339978248");
-        Map<String, String> map = BeanUtils.describe(alipayPayNotifyUrlRequestBean);
-        map.remove("class");
+        String passback = Base64.getEncoder().encodeToString("orderNo=uoo234234&isvOrderNo=24werwe&items=1-2|2-1|3-5".getBytes("utf-8"));
+        System.out.println(passback);
+        alipayPayNotifyUrlRequestBean.setPassback_params(passback);
 
+        Map<String, String> map = CommonUtils.objectToMap(alipayPayNotifyUrlRequestBean);
+//        Set set = map.entrySet();
+//        set.parallelStream().forEach(e -> System.out.println(e));
         List<Map.Entry<String, String>> infoIds = new ArrayList<Map.Entry<String, String>>(map.entrySet());
         // 对所有传入参数按照字段名的 ASCII 码从小到大排序（字典序）
         Collections.sort(infoIds, new Comparator<Map.Entry<String, String>>() {
@@ -89,7 +93,8 @@ public class AlipayPayNotifyControllerTest extends BaseTest {
                 .param("notify_id",alipayPayNotifyUrlRequestBean.getNotify_id()).param("app_id",alipayPayNotifyUrlRequestBean.getApp_id())
                 .param("charset",alipayPayNotifyUrlRequestBean.getCharset()).param("version",alipayPayNotifyUrlRequestBean.getVersion())
                 .param("sign_type","RSA2").param("sign",sign)
-                .param("trade_no",alipayPayNotifyUrlRequestBean.getTrade_no()).param("out_trade_no",alipayPayNotifyUrlRequestBean.getOut_trade_no()))
+                .param("trade_no",alipayPayNotifyUrlRequestBean.getTrade_no()).param("out_trade_no",alipayPayNotifyUrlRequestBean.getOut_trade_no())
+                .param("passback_params",alipayPayNotifyUrlRequestBean.getPassback_params()))
                 .andExpect(MockMvcResultMatchers.status().isOk())
 //                .andExpect(MockMvcResultMatchers.content().contentType(MediaType.APPLICATION_JSON_UTF8))
                 .andReturn();
