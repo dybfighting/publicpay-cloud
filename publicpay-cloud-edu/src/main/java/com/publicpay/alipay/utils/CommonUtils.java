@@ -38,4 +38,15 @@ public class CommonUtils {
         }
         return map;
     }
+    public static Map<String,String> splitToMap(String urlparam){
+        Map<String,String> map = new HashMap<String,String>();
+        String[] param =  urlparam.split("&");
+        for(String keyValue:param){
+            String[] pair = keyValue.split("=");
+            if(pair.length==2){
+                map.put(pair[0], pair[1]);
+            }
+        }
+        return map;
+    }
 }

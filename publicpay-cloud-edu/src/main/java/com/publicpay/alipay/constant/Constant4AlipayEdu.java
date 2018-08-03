@@ -119,6 +119,9 @@ public class Constant4AlipayEdu {
      */
     public static final String NOTIFY_TIME = "notify_time";//
     public static final String FUND_CHANNEL = "fundChannel";//支付渠道
+    public static final String ORDERNO = "orderNo";
+    public static final String ISV_ORDERNO = "isvOrderNo";
+    public static final String ITEMS = "items";
 
     /**
      * 学生信息查询接口参数
