@@ -9,7 +9,7 @@ package com.publicpay.alipay.constant;
  */
 public class Constant4AlipayEdu {
     public static final String SUCCESS = "success";
-    public static final String ERROR = "error";
+    public static final String FAILURE = "failure";
     /**
      * 公共
      */

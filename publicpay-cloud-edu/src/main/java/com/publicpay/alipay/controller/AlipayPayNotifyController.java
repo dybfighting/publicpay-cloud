@@ -1,8 +1,8 @@
 package com.publicpay.alipay.controller;
 
+import com.publicpay.alipay.bean.AlipayPayNotifyUrlRequestBean;
 import com.publicpay.alipay.edu.service.AlipayPayNotifyService;
 import com.publicpay.base.utils.ValidUtil;
-import com.publicpay.alipay.bean.AlipayPayNotifyUrlRequestBean;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
 
-import static com.publicpay.alipay.constant.Constant4AlipayEdu.ERROR;
+import static com.publicpay.alipay.constant.Constant4AlipayEdu.FAILURE;
 import static com.publicpay.alipay.constant.Constant4AlipayEdu.SUCCESS;
 
 /**
@@ -54,7 +54,7 @@ public class AlipayPayNotifyController {
             alipayPayNotifyService.alipayPayNotify(alipayPayNotifyUrlRequestBean);
         } catch (Exception e) {
             logger.error("",e);
-            return ERROR;
+            return FAILURE;
         }
 
 

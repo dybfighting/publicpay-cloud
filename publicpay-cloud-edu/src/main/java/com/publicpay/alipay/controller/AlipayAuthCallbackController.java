@@ -12,9 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
-import static com.publicpay.alipay.constant.Constant4AlipayEdu.AUTHORIZATION_CODE;
-import static com.publicpay.alipay.constant.Constant4AlipayEdu.ERROR;
-import static com.publicpay.alipay.constant.Constant4AlipayEdu.SUCCESS;
+import static com.publicpay.alipay.constant.Constant4AlipayEdu.*;
 
 /**
  * @author dyb
@@ -55,7 +53,7 @@ public class AlipayAuthCallbackController {
             alipayOpenAuthTokenAppRequestImpl.service(bizContentBean);
         } catch (Exception e) {
             logger.error("",e);
-            return ERROR;
+            return FAILURE;
         }
 
         return SUCCESS;
