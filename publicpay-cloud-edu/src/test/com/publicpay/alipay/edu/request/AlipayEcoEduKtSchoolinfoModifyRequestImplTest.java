@@ -2,6 +2,7 @@ package com.publicpay.alipay.edu.request;
 
 import com.publicpay.alipay.BaseTest;
 import com.publicpay.alipay.bean.AlipayEcoEduKtSchoolinfoModifyRequestBizContentBean;
+import com.publicpay.alipay.config.AlipayConfig;
 import com.publicpay.alipay.enums.AlipaySchoolTypeEnum;
 import org.junit.Test;
 
@@ -17,8 +18,11 @@ import javax.annotation.Resource;
 public class AlipayEcoEduKtSchoolinfoModifyRequestImplTest extends BaseTest{
     @Resource
     private AlipayAbstractRequest alipayEcoEduKtSchoolinfoModifyRequestImpl;
+    @Resource
+    private AlipayConfig alipayConfig;
     @Test
     public void test(){
+        System.out.println(alipayConfig.toString());
         AlipayEcoEduKtSchoolinfoModifyRequestBizContentBean bizContentBean = new AlipayEcoEduKtSchoolinfoModifyRequestBizContentBean();
         bizContentBean.setSchoolName("杭州市西湖第一实验学校");
         bizContentBean.setSchoolStdcode("3133005132");
@@ -63,8 +67,7 @@ public class AlipayEcoEduKtSchoolinfoModifyRequestImplTest extends BaseTest{
         try {
             alipayEcoEduKtSchoolinfoModifyRequestImpl.service(bizContentBean);
         } catch (Exception e) {
-            throw new RuntimeException();
-//            e.getCause();
+            e.printStackTrace();
         }
     }
 }

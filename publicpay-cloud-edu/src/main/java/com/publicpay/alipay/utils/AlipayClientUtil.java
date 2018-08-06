@@ -32,8 +32,8 @@ public class AlipayClientUtil {
         }
     }
     private static final String DEV_URL=props.getProperty("alipay.gateway");
-    private static final String APP_ID = props.getProperty("alipay.auth.app.id");
-    private static final String PRIVATE_KEY = props.getProperty("publicpay.edu.privateKey");
+    private static final String APP_ID = props.getProperty("alipay.auth_app_id");
+    private static final String PRIVATE_KEY = props.getProperty("alipay.publicpay_edu_private_key");
     private static final String ALIPAY_PUBLIC_KEY = props.getProperty("alipay.publicKey");
 
 //    private static final String PRO_URL="https://openapi.alipay.com/gateway.do";
