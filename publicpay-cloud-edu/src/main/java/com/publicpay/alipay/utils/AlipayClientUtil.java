@@ -7,6 +7,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
+import static com.publicpay.alipay.constant.Constant4AlipayEdu.GBK;
+import static com.publicpay.alipay.constant.Constant4AlipayEdu.JSON;
+import static com.publicpay.alipay.constant.Constant4AlipayEdu.RSA2;
+
 /**
  * @author dyb
  * @version V1.0
@@ -46,10 +50,10 @@ public class AlipayClientUtil {
                     DEV_URL,
                      APP_ID,
                     PRIVATE_KEY,
-                    "json",
-                    "GBK",
+                    JSON,
+                     GBK,
                      ALIPAY_PUBLIC_KEY,
-                    "RSA2");
+                     RSA2);
 //             threadLocal.set(alipayClient);
         }
         return alipayClient;

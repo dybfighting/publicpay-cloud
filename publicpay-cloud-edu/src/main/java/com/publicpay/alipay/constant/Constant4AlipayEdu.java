@@ -4,7 +4,7 @@ package com.publicpay.alipay.constant;
  * @author dyb
  * @version V1.0
  * @Package com.publicpay.edu.alipay.constant
- * @Description: TODO
+ * @Description: 常量
  * @date 2018/7/19 上午10:44
  */
 public class Constant4AlipayEdu {
@@ -18,6 +18,10 @@ public class Constant4AlipayEdu {
     public static final String SUB_CODE = "sub_code";
     public static final String SUB_MSG = "sub_msg";
     public static final String SIGN = "sign";
+    public static final String JSON = "json";
+    public static final String GBK = "GBK";
+    public static final String UTF8 = "UTF-8";
+    public static final String RSA2 = "RSA2";
     /**
      * 商户授权
      */
