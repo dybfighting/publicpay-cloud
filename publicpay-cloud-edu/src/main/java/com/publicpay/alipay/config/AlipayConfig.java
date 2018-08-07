@@ -18,19 +18,24 @@ public class AlipayConfig {
     private String publicpay_edu_public_key;
     private String publicpay_edu_private_key;
     private String publicKey;
-    private String dev_app_id;
-    private String merchant_uid;
-    private String app_auth_token;
-    private String auth_app_id;
+    private String isv_app_id;
+    private String isv_pid;
     private String gateway;
-    private String aaa;
 
-    public String getAaa() {
-        return aaa;
+    public String getIsv_app_id() {
+        return isv_app_id;
     }
 
-    public void setAaa(String aaa) {
-        this.aaa = aaa;
+    public void setIsv_app_id(String isv_app_id) {
+        this.isv_app_id = isv_app_id;
+    }
+
+    public String getIsv_pid() {
+        return isv_pid;
+    }
+
+    public void setIsv_pid(String isv_pid) {
+        this.isv_pid = isv_pid;
     }
 
     public String getPublicpay_edu_public_key() {
@@ -57,37 +62,6 @@ public class AlipayConfig {
         this.publicKey = publicKey;
     }
 
-    public String getDev_app_id() {
-        return dev_app_id;
-    }
-
-    public void setDev_app_id(String dev_app_id) {
-        this.dev_app_id = dev_app_id;
-    }
-
-    public String getMerchant_uid() {
-        return merchant_uid;
-    }
-
-    public void setMerchant_uid(String merchant_uid) {
-        this.merchant_uid = merchant_uid;
-    }
-
-    public String getApp_auth_token() {
-        return app_auth_token;
-    }
-
-    public void setApp_auth_token(String app_auth_token) {
-        this.app_auth_token = app_auth_token;
-    }
-
-    public String getAuth_app_id() {
-        return auth_app_id;
-    }
-
-    public void setAuth_app_id(String auth_app_id) {
-        this.auth_app_id = auth_app_id;
-    }
 
     public String getGateway() {
         return gateway;
